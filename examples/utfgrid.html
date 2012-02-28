@@ -79,6 +79,8 @@
                     // idx can be used to retrieve layer from map.layers[idx]
                     info = infoLookup[idx];
                     if (info && info.data) {
+                        var layer = map.layers[idx];
+                        layer.highlightFeatures([info.id]);
                         msg += "[" + info.id + "] <strong>In 2005, " + 
                             info.data.NAME + " had a population of " +
                             info.data.POP2005 + " people.</strong> ";
@@ -129,7 +131,13 @@
         var grid_layer = new OpenLayers.Layer.UTFGrid( 
             'Invisible UTFGrid Layer', 
             "./utfgrid/world_utfgrid/${z}/${x}/${y}.json",
-            {utfgridResolution: 4} // default is 2
+            {
+                utfgridResolution: 4, 
+                highlightStyle: {
+                    fillColor: "#ffaa00",
+                    fillOpacity: 0.4
+                }
+            }
         );
         map.addLayer(grid_layer);
 
