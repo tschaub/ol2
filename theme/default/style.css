@@ -463,6 +463,46 @@ a.olControlZoomOut {
     border-radius: 0 0 4px 4px;
 }
 
+div.olDialog {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: opacity .2s linear;
+    -moz-transition: opacity .2s linear;
+    -o-transition: opacity .2s linear;
+    transition: opacity .2s linear;
+}
+div.olDialog.olDialogOpen {
+    opacity: 1;
+}
+div.olDialogContentWrapper {
+    text-align: left;
+    background: white;
+    -moz-box-shadow: 0 3px 10px #888;
+    -webkit-box-shadow: 0 3px 10px #888;
+    box-shadow: 0 3px 10px #888;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    padding: 1px;
+}
+div.olDialogButtonWrapper {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+}
+a.olDialogButton {
+    float: right;
+    width: 11px;
+    height: 11px;
+    text-decoration: none;
+}
+a.olDialogButton_close {
+    background: white url(img/dialog-close.png) no-repeat center;
+}
+div.olDialogContent {
+    margin: 14px 12px;
+}
 
 /**
  * Animations
